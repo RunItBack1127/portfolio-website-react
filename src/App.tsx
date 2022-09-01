@@ -33,10 +33,6 @@ function App() {
     nextSelectedSkill?.classList.add( "currentSelection" );
   }
 
-  function updateFields( e ) {
-    console.log( e.target.value );
-  }
-
   const WEB_DEV_STACK_TECHNOLOGIES: Array<Technology> = [
     {
       name: "Vue.js",
@@ -409,12 +405,17 @@ function App() {
                     <input onInput={ (e) => {
                       const formFields = [ ...document.querySelectorAll( "section.fieldContainer input" ),
                                             ...document.querySelectorAll( "section.fieldContainer textarea" ) ];
+                      const contactForm = document.querySelector( "form.contactForm" );
+
                       if( e.target.value === "" ) {
-                        document.querySelector( "form.contactForm" )?.classList.add( "preventSend" );
+                        contactForm?.classList.add( "preventSend" );
                         e.target.classList.add( "emptyField" );
+
+                        if( !formFields.some((field) => field.value !== "") ) {
+                          contactForm?.classList.add( "preventClear" );
+                        }
                       }
                       else {
-                        const contactForm = document.querySelector( "form.contactForm" );
                         contactForm?.classList.remove( "preventClear" );
                         if( !formFields.some((field) => field.value === "") ) {
                           contactForm?.classList.remove( "preventSend" );
@@ -428,12 +429,17 @@ function App() {
                     <input onInput={ (e) => {
                       const formFields = [ ...document.querySelectorAll( "section.fieldContainer input" ),
                                             ...document.querySelectorAll( "section.fieldContainer textarea" ) ];
+                      const contactForm = document.querySelector( "form.contactForm" );
+
                       if( e.target.value === "" ) {
-                        document.querySelector( "form.contactForm" )?.classList.add( "preventSend" );
+                        contactForm?.classList.add( "preventSend" );
                         e.target.classList.add( "emptyField" );
+
+                        if( !formFields.some((field) => field.value !== "") ) {
+                          contactForm?.classList.add( "preventClear" );
+                        }
                       }
                       else {
-                        const contactForm = document.querySelector( "form.contactForm" );
                         contactForm?.classList.remove( "preventClear" );
                         if( !formFields.some((field) => field.value === "") ) {
                           contactForm?.classList.remove( "preventSend" );
@@ -448,12 +454,17 @@ function App() {
                   <input onInput={ (e) => {
                       const formFields = [ ...document.querySelectorAll( "section.fieldContainer input" ),
                                             ...document.querySelectorAll( "section.fieldContainer textarea" ) ];
+                      const contactForm = document.querySelector( "form.contactForm" );
+                      
                       if( e.target.value === "" ) {
-                        document.querySelector( "form.contactForm" )?.classList.add( "preventSend" );
+                        contactForm?.classList.add( "preventSend" );
                         e.target.classList.add( "emptyField" );
+
+                        if( !formFields.some((field) => field.value !== "") ) {
+                          contactForm?.classList.add( "preventClear" );
+                        }
                       }
                       else {
-                        const contactForm = document.querySelector( "form.contactForm" );
                         contactForm?.classList.remove( "preventClear" );
                         if( !formFields.some((field) => field.value === "") ) {
                           contactForm?.classList.remove( "preventSend" );
@@ -467,12 +478,17 @@ function App() {
                   <textarea onInput={ (e) => {
                       const formFields = [ ...document.querySelectorAll( "section.fieldContainer input" ),
                                             ...document.querySelectorAll( "section.fieldContainer textarea" ) ];
+                      const contactForm = document.querySelector( "form.contactForm" );
+
                       if( e.target.value === "" ) {
-                        document.querySelector( "form.contactForm" )?.classList.add( "preventSend" );
+                        contactForm?.classList.add( "preventSend" );
                         e.target.classList.add( "emptyField" );
+
+                        if( !formFields.some((field) => field.value !== "") ) {
+                          contactForm?.classList.add( "preventClear" );
+                        }
                       }
                       else {
-                        const contactForm = document.querySelector( "form.contactForm" );
                         contactForm?.classList.remove( "preventClear" );
                         if( !formFields.some((field) => field.value === "") ) {
                           contactForm?.classList.remove( "preventSend" );

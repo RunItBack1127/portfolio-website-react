@@ -5,5 +5,9 @@ div.keyboardInnerContainer {
     svg.keyboardGraphic {
         width: 100%;
         opacity: 0.1;
+
+        g g path:not(.keyboardPanel).litKey {
+            fill: #f00;
+        }
     }
 }
