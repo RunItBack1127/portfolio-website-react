@@ -1,5 +1,9 @@
 import '../style/SiteNavigation.scss';
 
+function toggleSiteSidebar() {
+    document.querySelector("aside.sideBar")?.classList.toggle("showSidebar");
+}
+
 export default function SiteNavigation() {
     return (
         <header className="siteHeader">
@@ -34,6 +38,13 @@ export default function SiteNavigation() {
                     <button>Resumé</button>
                     <button className="contact">Contact</button>
                 </nav>
+                <button className="responsiveMenuToggle" onClick={ toggleSiteSidebar }>
+                    <svg viewBox="0 0 100 63">
+                        <rect x="20" width="60" y="15" height="1" />
+                        <rect x="20" width="60" y="31" height="1" />
+                        <rect x="20" width="60" y="47" height="1" />
+                    </svg>
+                </button>
             </div>
         </header>
     )
