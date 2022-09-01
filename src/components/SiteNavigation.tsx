@@ -31,7 +31,7 @@ export default function SiteNavigation() {
                     <button>Home</button>
                     <button>Skills</button>
                     <button>Portfolio</button>
-                    <button>Resume</button>
+                    <button>Resumé</button>
                     <button className="contact">Contact</button>
                 </nav>
             </div>
