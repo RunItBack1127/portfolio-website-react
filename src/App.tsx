@@ -173,7 +173,7 @@ function App() {
     },
     {
       name: "Spring MVC",
-      level: 1,
+      level: 2,
       logo: "https://spring.io/images/spring-logo-9146a4d3298760c2e7e49595184e1975.svg"
     },
     {
@@ -187,9 +187,9 @@ function App() {
       logo: "https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png.webp"
     },
     {
-      name: "NGINX",
+      name: "PostgreSQL",
       level: 3,
-      logo: "https://www.freelogovectors.net/wp-content/uploads/2022/03/nginx_logo_freelogovectors.net_-768x872.png"
+      logo: "https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg"
     }
   ]
 
