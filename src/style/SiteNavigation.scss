@@ -1,0 +1,54 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    div {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        ul {
+            width: 150px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            li {
+                a, span {
+                    svg {
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
+            }
+        }
+
+        nav {
+            width: 700px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            button {
+                font-size: 1.125rem;
+                letter-spacing: 0.125rem;
+                text-transform: uppercase;
+            }
+
+            button.contact {
+                background-color: #000;
+                border-radius: 50px;
+                color: #fff;
+                padding: 12.5px 35px;
+            }
+        }
+    }
+}
