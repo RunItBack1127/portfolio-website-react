@@ -1,8 +1,74 @@
 import './style/App.scss';
 import KeyboardGraphic from "./components/KeyboardGraphic";
 import SiteNavigation from "./components/SiteNavigation";
+import TechTotem from './components/TechTotem';
+
+import type { Technology } from './util/Technology';
+import SkillsSlider from './components/SkillsSlider';
+import { Skill } from './util/Skill';
 
 function App() {
+
+  const WEB_DEV_STACK_TECHNOLOGIES: Array<Technology> = [
+    {
+      name: "Vue.js",
+      level: 4
+    },
+    {
+      name: "Typescript",
+      level: 4
+    },
+    {
+      name: "Node.js",
+      level: 4
+    },
+    {
+      name: "React",
+      level: 3
+    },
+  ];
+
+  const SOFTWARE_DEV_STACK_TECHNOLOGIES: Array<Technology> = [
+    {
+      name: "Java",
+      level: 4
+    },
+    {
+      name: "Python",
+      level: 3
+    },
+    {
+      name: "C/C++",
+      level: 3
+    },
+    {
+      name: "Rust",
+      level: 1
+    }
+  ];
+
+  const SKILLS: Array<Skill> = [
+    {
+      description: "REST API Development",
+      proficiency: 80
+    },
+    {
+      description: "Version Control",
+      proficiency: 75
+    },
+    {
+      description: "Containerization",
+      proficiency: 70
+    },
+    {
+      description: "Microservices",
+      proficiency: 65
+    },
+    {
+      description: "Unit Testing",
+      proficiency: 50
+    }
+  ];
 
   return (
     <div className="App">
@@ -27,7 +93,7 @@ function App() {
         </section>
         <section className="introExperienceContainer">
           <div className="introExperienceInner">
-            <article className="aboutMeCard">
+            <article className="introExperienceCard aboutMeCard">
               <h1 className="header">About Me</h1>
               <div className="cardContent">
                 <div className="educationContainer">
@@ -49,10 +115,27 @@ function App() {
                 </div>
               </div>
             </article>
-            <article className="experienceContainer">
+            <article className="introExperienceCard experienceContainer">
               <h1 className="header">Experience</h1>
               <div className="cardContent">
-                
+                <div className="experienceCardContainer">
+                  <div className="cardInner">
+                    <TechTotem title="Web Dev Stack" technologies={ WEB_DEV_STACK_TECHNOLOGIES } />
+                  </div>
+                  <div className="cardInner">
+                    <TechTotem title="Software Dev Stack" technologies={ SOFTWARE_DEV_STACK_TECHNOLOGIES } />
+                  </div>
+                </div>
+                <div className="skillsContainer">
+                  <h1 className="skillsHeader">Skills</h1>
+                  {
+                    SKILLS.map((skill) => {
+                      return (
+                        <SkillsSlider skill={ skill } />
+                      );
+                    })
+                  }
+                </div>
               </div>
             </article>
           </div>

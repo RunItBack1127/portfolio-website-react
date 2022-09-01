@@ -117,7 +117,7 @@ section.introExperienceContainer {
         width: 90%;
         min-height: 660px;
 
-        article {
+        article.introExperienceCard {
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -142,6 +142,7 @@ section.introExperienceContainer {
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+                width: 90%;
                 height: 100%;
             }
         }
@@ -149,8 +150,6 @@ section.introExperienceContainer {
         article.aboutMeCard {
 
             .cardContent {
-
-                width: 90%;
 
                 h1.innerHeader {
                     font-family: Radian Bold, sans-serif;
@@ -205,6 +204,35 @@ section.introExperienceContainer {
                     p.tagline:first-child {
                         margin-bottom: 10px;
                     }
+                }
+            }
+        }
+
+        article.experienceContainer {
+
+            .cardContent {
+
+                .experienceCardContainer {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 0 50px;
+                    margin-bottom: 50px;
+                
+                    .cardInner {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .skillsContainer {
+
+                width: 100%;
+
+                h1.skillsHeader {
+                    font-family: Radian Bold, sans-serif;
+                    font-size: 2rem;
+                    text-transform: uppercase;
+                    margin-bottom: 30px;
                 }
             }
         }

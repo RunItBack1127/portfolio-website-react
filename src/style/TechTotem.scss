@@ -1,0 +1,53 @@
+.techTotemContainer {
+    width: 100%;
+
+    h1.totemTitle {
+        font-family: Radian Bold, sans-serif;
+        font-size: 2.25rem;
+        line-height: 2.25rem;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .expContainer {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+
+        h1.techName {
+            font-size: 1.15rem;
+            flex-basis: 45%;
+        }
+
+        .gaugeContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-basis: 55%;
+
+            .gaugeInner {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 75%;
+
+                svg {
+                    width: 15px;
+                    height: 15px;
+
+                    circle {
+                        fill: transparent;
+                        border: 1px solid #000;
+                        stroke: #000;
+                        stroke-width: 2px;
+                    }
+                }
+
+                svg.skill-met circle {
+                    fill: #000;
+                }
+            }
+        }
+    }
+}
