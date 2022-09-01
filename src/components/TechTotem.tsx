@@ -16,7 +16,7 @@ export default function TechTotem(props: TechTotemProps) {
             <h1 className="totemTitle">{ props.title }</h1>
             { props.technologies.map((tech) => {
                 return (
-                    <ExperienceContainer technology={ tech } />
+                    <ExperienceContainer key={ `${tech.name}` } technology={ tech } />
                 );
             }) }
         </article>

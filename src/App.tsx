@@ -110,7 +110,7 @@ class App extends React.Component {
                     {
                       EXPERIENCE_SKILLS.map((skill) => {
                         return (
-                          <SkillsSlider skill={ skill } />
+                          <SkillsSlider key={ `${skill.description}` } skill={ skill } />
                         );
                       })
                     }
@@ -132,7 +132,7 @@ class App extends React.Component {
                 {
                   FBF_SKILLS[this.state.skillIndex].map((tech) => {
                     return (
-                      <SkillCard technology={ tech } />
+                      <SkillCard key={ `${tech.name}` } technology={ tech } />
                     )
                   })
                 }
@@ -147,7 +147,7 @@ class App extends React.Component {
                 {
                   PORTFOLIO_PROJECTS.map((project) => {
                     return (
-                      <PortfolioCard project={ project } />
+                      <PortfolioCard key={ project.name } project={ project } />
                     )
                   })
                 }

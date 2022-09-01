@@ -20,7 +20,7 @@ export default function PortfolioCard(props: PortfolioCardProps) {
                     {
                         props.project.technologiesUsed.map((tech) => {
                             return (
-                                <img src={ tech.logo } />
+                                <img key={ `${tech.name}` } src={ tech.logo } />
                             )
                         })
                     }
