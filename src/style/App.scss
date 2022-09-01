@@ -8,13 +8,33 @@ body {
     overflow-x: hidden;
 }
 
+body.showSideBar {
+    overflow-y: hidden;
+}
+
 main {
     margin-top: var(--site-navigation-header-height);
     width: 100vw;
     height: 100vh;
+
+    .sideBarObfuscator {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 99999;
+        background-color: rgba(50, 50, 50, 0.85);
+    }
+
+    .sideBarObfuscator.showSideBar {
+        display: block;
+    }
 }
 
 .keyboardContainer {
+    overflow: hidden;
     position: absolute;
     display: flex;
     justify-content: center;

@@ -1,0 +1,99 @@
+aside.sideBar {
+    position: absolute;
+    top: 0;
+    right: -400px;
+    width: 90vw;
+    max-width: 400px;
+    height: 100vh;
+    z-index: 999999;
+    transition: right 200ms ease-in-out;
+    background: #fff;
+
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: var(--site-navigation-header-height);
+        width: 100%;
+        box-shadow: rgba(50, 50, 93, 0.15) 0px 2px 5px -1px, rgba(0, 0, 0, 0.15) 0px 1px 3px -1px;
+        margin-bottom: 40px;
+
+        div.headerInner {
+            width: 80%;
+            height: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            button {
+                width: 75px;
+                height: 50px;
+                border-radius: 10px;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+
+                svg {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+        }
+    }
+
+    div.sideBarContents {
+        width: 100%;
+        height: calc(100% - var(--site-navigation-header-height));
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        nav {
+            width: 100%;
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            button {
+                width: 100%;
+                font-size: 1.5rem;
+            }
+
+            button:not(:last-child) {
+                margin-bottom: 50px;
+            }
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 50%;
+
+            a.sideBarOption {
+                width: 80%;
+                font-size: 1.5rem;
+                padding: 20px 0;
+                border: 1px solid #000;
+                border-radius: 10px;
+                text-align: center;
+            }
+
+            a.sideBarOption.githubOption {
+                background-color: #222;
+                color: #fff;
+            }
+
+            a.sideBarOption:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+aside.sideBar.showSideBar {
+    right: 0;
+}

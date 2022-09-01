@@ -18,6 +18,7 @@ import { Project } from './util/Project';
 import PortfolioCard from './components/PortfolioCard';
 import ContactCard from './components/ContactCard';
 import SiteFooter from './components/SiteFooter';
+import SideBarMenu from './components/SideBarMenu';
 
 function App() {
 
@@ -275,11 +276,13 @@ function App() {
     BACKEND_SKILLS,
     MISC_SKILLS
   ];
+  
+  document.querySelector("body")?.classList.add("sideBarComponent");
 
   return (
     <div className="App">
       <SiteNavigation />
-      <main>
+      <main className="sideBarComponent">
         <div className="keyboardContainer">
           <KeyboardGraphic />
         </div>
@@ -520,7 +523,9 @@ function App() {
           </div>
         </section>
         <SiteFooter />
+        <div className="sideBarObfuscator sideBarComponent" />
       </main>
+      <SideBarMenu />
     </div>
   )
 };

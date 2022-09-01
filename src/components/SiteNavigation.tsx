@@ -1,7 +1,9 @@
 import '../style/SiteNavigation.scss';
 
-function toggleSiteSidebar() {
-    document.querySelector("aside.sideBar")?.classList.toggle("showSidebar");
+function showSideBar() {
+    document.querySelectorAll(".sideBarComponent").forEach((component) => {
+        component.classList.add("showSideBar");
+    });
 }
 
 export default function SiteNavigation() {
@@ -38,7 +40,7 @@ export default function SiteNavigation() {
                     <button>Resumé</button>
                     <button className="contact">Contact</button>
                 </nav>
-                <button className="responsiveMenuToggle" onClick={ toggleSiteSidebar }>
+                <button className="responsiveMenuToggle" onClick={ showSideBar }>
                     <svg viewBox="0 0 100 63">
                         <rect x="20" width="60" y="15" height="1" />
                         <rect x="20" width="60" y="31" height="1" />
