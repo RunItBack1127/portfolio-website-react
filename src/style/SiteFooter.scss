@@ -10,16 +10,20 @@
 
     .footerInner {
         width: 90%;
+        height: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
 
         nav {
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
 
             a {
+                transition: opacity 100ms ease-in;
+
                 img, svg {
                     width: 30px;
                     height: 30px;
@@ -29,6 +33,12 @@
 
             a:not(:last-child) {
                 margin-right: 30px;
+            }
+        }
+
+        nav:hover {
+            a:not(:hover) {
+                opacity: 0.25;
             }
         }
     }
