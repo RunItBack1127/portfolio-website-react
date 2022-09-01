@@ -13,6 +13,7 @@ import { useState } from 'react';
 import { Project } from './util/Project';
 import PortfolioCard from './components/PortfolioCard';
 import ContactCard from './components/ContactCard';
+import SiteFooter from './components/SiteFooter';
 
 function App() {
 
@@ -522,6 +523,7 @@ function App() {
             </div>
           </div>
         </section>
+        <SiteFooter />
       </main>
     </div>
   )
