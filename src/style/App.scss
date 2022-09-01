@@ -144,6 +144,7 @@ section.introExperienceContainer {
             align-items: center;
             flex-basis: 47.5%;
             min-width: 580px;
+            min-height: 700px;
             height: 100%;
             border-radius: 50px;
             border: 1px solid #000;
@@ -155,6 +156,7 @@ section.introExperienceContainer {
                 transform: translateY(-50%);
                 background-color: #fff;
                 padding: 0 50px;
+                text-align: center;
             }
 
             .cardContent {
@@ -179,13 +181,13 @@ section.introExperienceContainer {
                 }
 
                 .talleyInfoContainer {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 0px 30px;
-                    margin-bottom: 40px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
 
                     img {
                         width: 275px;
+                        margin-right: 30px;
                     }
 
                     .talleyInfo {
@@ -220,10 +222,6 @@ section.introExperienceContainer {
                     p.tagline {
                         font-size: 1.15rem;
                     }
-
-                    p.tagline:first-child {
-                        margin-bottom: 10px;
-                    }
                 }
             }
         }
@@ -235,7 +233,7 @@ section.introExperienceContainer {
                 .experienceCardContainer {
                     display: grid;
                     grid-template-columns: 1fr 1fr;
-                    gap: 0 50px;
+                    gap: 50px 0;
                     margin-bottom: 60px;
                 
                     .cardInner {
@@ -456,4 +454,251 @@ section.contactSection {
 @font-face {
     font-family: Radian Extra Light;
     src: url("../assets/fonts/Radian_ExtraLight.ttf");
+}
+
+@media screen and (max-width: 376px) {
+    section.introExperienceContainer .introExperienceInner {
+        
+        article.introExperienceCard {
+            border: none;
+
+            h1.header {
+                width: 100%;
+                padding: 0;
+            }
+        }
+
+        article.experienceContainer {
+
+            .skillsContainer {
+
+                .skillsSliderContainer {
+                    flex-direction: column;
+
+                    p {
+                        margin-bottom: 10px;
+                        width: 100%;
+                    }
+
+                    span {
+                        width: 100%;
+                        flex-basis: unset;
+                    }
+                }
+
+                .skillsSliderContainer:not(:last-child) {
+                    margin-bottom: 40px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 448px) {
+    section.siteIntro .introContent .nameContainer h1 {
+        font-size: 2.25em;
+    }
+
+    section.contactSection .contactInner .contactContainer form.contactForm .clearSubmitContainer {
+        flex-direction: column;
+        height: unset;
+
+        button {
+            width: 100%;
+            height: 60px;
+            border-radius: 10px;
+        }
+        
+        button:not(:last-child) {
+            margin: 30px 0;
+        }
+    }
+
+    footer.siteFooter {
+        height: 200px;
+        
+        .footerInner {
+            flex-direction: column;
+            justify-content: center;
+
+            nav {
+                margin-top: 50px;
+                height: unset;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 449px) and (max-width: 588px) {
+    section.siteIntro .introContent .nameContainer h1 {
+        font-size: 3em;
+    }
+}
+
+@media screen and (max-width: 448px) {
+    section.siteIntro {
+        margin-top: 200px;
+
+        .introContent {
+            width: 90%;
+
+            .nameContainer {
+
+                p {
+                    font-size: 0.75em;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 588px) {
+    section.skillsSection .skillsInner .selectorContainer {
+        flex-direction: column;
+        align-items: flex-start;
+
+        button {
+            border-radius: 10px;
+            width: 100%;
+        }
+
+        button:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+
+    section.contactSection .contactInner .contactContainer form.contactForm .nameEmailContainer {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 704px) {
+    section.introExperienceContainer .introExperienceInner {
+        article.aboutMeCard .cardContent .talleyInfoContainer {
+            flex-direction: column;
+            margin-bottom: 60px;
+
+            img {
+                margin-bottom: 20px;
+            }
+
+            .talleyInfo {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                h1 {
+                    text-align: center;
+                }
+            }
+        }
+
+        article.experienceContainer .cardContent {
+            .experienceCardContainer {
+                margin-top: 30px;
+                grid-template-columns: 1fr;
+                gap: 50px 0;
+            }
+
+            .skillsContainer {
+                padding-bottom: 20px;
+            }
+        }
+    }
+
+    section.skillsSection {
+
+        .skillsInner {
+            
+            .skillsContainer {
+                width: 100%;
+                max-width: 400px;
+                grid-template-columns: 1fr;
+                margin: auto;
+            }
+        }
+    }
+
+    section.portfolioSection .portfolioSectionInner {
+
+        .portfolioContainer {
+            grid-template-columns: 1fr;
+
+            .portfolioCard .portfolioCardInner {
+                width: 90%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 728px) {
+    section.siteIntro .introContent {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 811px) {
+    section.siteIntro .introContent {
+
+        .nameContainer {
+            margin-bottom: 50px;
+        }
+
+        div.workContactContainer {
+
+            margin-top: 65px;
+
+            button {
+                width: 100%;
+                border-radius: 15px;
+            }
+
+            button:not(:last-child) {
+                margin-bottom: 20px;
+            }
+
+            flex-direction: column;
+        }
+    }
+}
+
+@media screen and (max-width: 1118px) {
+    section.contactSection .contactInner .contactContainer {
+        grid-template-columns: 1fr;
+
+        article.contactCard {
+            max-width: 500px;
+        }
+    }
+}
+
+@media screen and (min-width: 705px) and (max-width: 1118px) {
+    section.skillsSection .skillsInner .skillsContainer {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    section.portfolioSection .portfolioSectionInner .portfolioContainer {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 1274px) {
+    section.introExperienceContainer .introExperienceInner {
+        max-width: 750px;
+        grid-template-columns: 1fr;
+
+        article.introExperienceCard {
+
+            min-width: 0px;
+        
+            .cardContent {
+                width: 80%;
+
+                .taglineContainer p.tagline:last-child {
+                    padding-bottom: 30px;
+                }
+            }
+        }
+    }
 }
