@@ -237,7 +237,7 @@ function App() {
         {
           name: "Flask",
           level: undefined,
-          logo: "https://cdn.icon-icons.com/icons2/2389/PNG/512/flask_logo_icon_145276.png"
+          logo: flaskIcon
         },
         {
           name: "React",
