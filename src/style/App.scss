@@ -184,6 +184,7 @@ section.introExperienceContainer {
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    margin-bottom: 75px;
 
                     img {
                         width: 275px;
@@ -221,6 +222,10 @@ section.introExperienceContainer {
                     
                     p.tagline {
                         font-size: 1.15rem;
+                    }
+
+                    p.tagline:not(:last-child) {
+                        margin-bottom: 10px;
                     }
                 }
             }
