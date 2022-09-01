@@ -27,7 +27,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      skillIndex: 0
+      skillIndex: 0,
+      isValidEmail: false
     };
 
     document.querySelector("body")?.classList.add("sideBarComponent");
@@ -189,7 +190,7 @@ class App extends React.Component {
                         }
                         else {
                           contactForm?.classList.remove( "preventClear" );
-                          if( !formFields.some((field) => field.value === "") ) {
+                          if( !formFields.some((field) => field.value === "") && this.state.isValidEmail ) {
                             contactForm?.classList.remove( "preventSend" );
                           }
                           e.target.classList.remove( "emptyField" );
@@ -199,12 +200,22 @@ class App extends React.Component {
                     <section className="fieldContainer">
                       <label htmlFor="emailField">Email</label>
                       <input onInput={ (e) => {
+
+                        /**
+                         * Simple email validation regex
+                         */
+                        function isValidEmail(email: string) {
+                          return email.match(new RegExp("^(.+)@(.+)$")) != null;
+                        }
+
                         const formFields = [ ...document.querySelectorAll( "section.fieldContainer input" ),
                                               ...document.querySelectorAll( "section.fieldContainer textarea" ) ];
                         const contactForm = document.querySelector( "form.contactForm" );
+                        const emailContainer = document.querySelector( "form.contactForm .nameEmailContainer" );
 
                         if( e.target.value === "" ) {
                           contactForm?.classList.add( "preventSend" );
+                          e.target.classList.remove("invalidEmail");
                           e.target.classList.add( "emptyField" );
 
                           if( !formFields.some((field) => field.value !== "") ) {
@@ -213,8 +224,16 @@ class App extends React.Component {
                         }
                         else {
                           contactForm?.classList.remove( "preventClear" );
-                          if( !formFields.some((field) => field.value === "") ) {
-                            contactForm?.classList.remove( "preventSend" );
+                          if( isValidEmail( e.target.value ) ) {
+                            if( !formFields.some((field) => field.value === "") ) {
+                              contactForm?.classList.remove( "preventSend" );
+                            }
+                            emailContainer?.classList.remove( "invalidEmail" );
+                            this.setState({ isValidEmail: true });
+                          }
+                          else {
+                            emailContainer?.classList.add( "invalidEmail" );
+                            this.setState({ isValidEmail: false });
                           }
                           e.target.classList.remove( "emptyField" );
                         }
@@ -238,7 +257,7 @@ class App extends React.Component {
                         }
                         else {
                           contactForm?.classList.remove( "preventClear" );
-                          if( !formFields.some((field) => field.value === "") ) {
+                          if( !formFields.some((field) => field.value === "") && this.state.isValidEmail ) {
                             contactForm?.classList.remove( "preventSend" );
                           }
                           e.target.classList.remove( "emptyField" );
@@ -262,7 +281,7 @@ class App extends React.Component {
                         }
                         else {
                           contactForm?.classList.remove( "preventClear" );
-                          if( !formFields.some((field) => field.value === "") ) {
+                          if( !formFields.some((field) => field.value === "") && this.state.isValidEmail ) {
                             contactForm?.classList.remove( "preventSend" );
                           }
                           e.target.classList.remove( "emptyField" );
@@ -277,10 +296,15 @@ class App extends React.Component {
                       formFields.map((field) => {
                         field.value = "";
                         field.classList.add( "emptyField" );
-                      })
+                      });
+
                       const contactForm = document.querySelector( "form.contactForm" );
                       contactForm?.classList.add( "preventClear" );
                       contactForm?.classList.add( "preventSend" );
+
+                      const emailContainer = document.querySelector( "form.contactForm .nameEmailContainer" );
+                      emailContainer?.classList.remove( "invalidEmail" );
+                      this.setState({ isValidEmail: false });
 
                     } } className="clearButton">Clear</button>
                     <button onClick={ (e) => {

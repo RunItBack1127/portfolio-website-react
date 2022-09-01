@@ -391,6 +391,22 @@ section.contactSection {
                     margin-bottom: 50px;
                 }
 
+                .nameEmailContainer.invalidEmail {
+
+                    label[for="emailField"]::after {
+                        position: absolute;
+                        margin-left: 10px;
+                        font-size: 0.75rem;
+                        font-family: Radian, sans-serif;
+                        color: #f00;
+                        content: "Invalid email address";
+                    }
+
+                    input[name="emailField"] {
+                        border: 2px solid #f00;
+                    }
+                }
+
                 section.subjectContainer {
                     margin-bottom: 50px;
                 }
