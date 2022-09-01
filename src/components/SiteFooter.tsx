@@ -1,4 +1,5 @@
 import '../style/SiteFooter.scss';
+import projectIcon from '../assets/project-code-icon.webp';
 
 export default function SiteFooter() {
     return (
@@ -17,7 +18,7 @@ export default function SiteFooter() {
                         </svg>
                     </a>
                     <a href="https://github.com/RunItBack1127">
-                        <img src="https://westonpgreene.com/assets/project-code-icon.webp" />
+                        <img src={ projectIcon } />
                     </a>
                 </nav>
             </div>
