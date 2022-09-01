@@ -20,10 +20,7 @@ import {
 } from './util/AppData';
 
 import React from 'react';
-import { useState } from 'react';
-
 import talleyWireframe from './assets/talley-wireframe.png';
-import { render } from 'react-dom';
 
 class App extends React.Component {
 
