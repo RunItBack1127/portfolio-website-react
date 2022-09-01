@@ -2,52 +2,76 @@ import './style/App.scss';
 import KeyboardGraphic from "./components/KeyboardGraphic";
 import SiteNavigation from "./components/SiteNavigation";
 import TechTotem from './components/TechTotem';
-
-import type { Technology } from './util/Technology';
 import SkillsSlider from './components/SkillsSlider';
+import SkillCard from './components/SkillCard';
+
 import { Skill } from './util/Skill';
 
+import type { Technology } from './util/Technology';
+
+import { useState } from 'react';
+
 function App() {
+
+  const [skillIndex, setSkillIndex] = useState<number>(0);
+
+  function updateSkillIndex( skillIndex: number ) {
+    setSkillIndex( skillIndex );
+    
+    const currentSelectedSkill = document.querySelector( "button.currentSelection" );
+    const nextSelectedSkill = document.querySelector( `section.skillsSection .skillsInner .selectorContainer button:nth-child(${ skillIndex + 1 })` );
+
+    currentSelectedSkill?.classList.remove( "currentSelection" );
+    nextSelectedSkill?.classList.add( "currentSelection" );
+  }
 
   const WEB_DEV_STACK_TECHNOLOGIES: Array<Technology> = [
     {
       name: "Vue.js",
-      level: 4
+      level: 4,
+      logo: undefined
     },
     {
       name: "Typescript",
-      level: 4
+      level: 4,
+      logo: undefined
     },
     {
       name: "Node.js",
-      level: 4
+      level: 4,
+      logo: undefined
     },
     {
       name: "React",
-      level: 3
+      level: 3,
+      logo: undefined
     },
   ];
 
   const SOFTWARE_DEV_STACK_TECHNOLOGIES: Array<Technology> = [
     {
       name: "Java",
-      level: 4
+      level: 4,
+      logo: undefined
     },
     {
       name: "Python",
-      level: 3
+      level: 3,
+      logo: undefined
     },
     {
       name: "C/C++",
-      level: 3
+      level: 3,
+      logo: undefined
     },
     {
       name: "Rust",
-      level: 1
+      level: 1,
+      logo: undefined
     }
   ];
 
-  const SKILLS: Array<Skill> = [
+  const EXPERIENCE_SKILLS: Array<Skill> = [
     {
       description: "REST API Development",
       proficiency: 80
@@ -68,6 +92,107 @@ function App() {
       description: "Unit Testing",
       proficiency: 50
     }
+  ];
+
+  const BACKEND_SKILLS: Array<Technology> = [
+    {
+      name: "Java",
+      level: 4,
+      logo: "https://cdn-icons-png.flaticon.com/512/226/226777.png"
+    },
+    {
+      name: "Python",
+      level: 3,
+      logo: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
+
+    },
+    {
+      name: "C++",
+      level: 3,
+      logo: "https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg"
+    },
+    {
+      name: "C",
+      level: 3,
+      logo: "https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png"
+    },
+    {
+      name: "Rust",
+      level: 1,
+      logo: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Rust_programming_language_black_logo.svg"
+    }
+  ];
+
+  const FRONTEND_SKILLS: Array<Technology> = [
+    {
+      name: "Vue.js",
+      level: 4,
+      logo: "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg"
+    },
+    {
+      name: "Typescript",
+      level: 4,
+      logo: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg"
+    },
+    {
+      name: "Node.js",
+      level: 4,
+      logo: "https://seeklogo.com/images/N/nodejs-logo-FBE122E377-seeklogo.com.png"
+    },
+    {
+      name: "React",
+      level: 3,
+      logo: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+    },
+    {
+      name: "HTML5",
+      level: 4,
+      logo: "https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg"
+    },
+    {
+      name: "CSS3",
+      level: 3,
+      logo: "https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg"
+    }
+  ]
+
+  const MISC_SKILLS: Array<Technology> = [
+    {
+      name: "Flask",
+      level: 3,
+      logo: "https://cdn.icon-icons.com/icons2/2389/PNG/512/flask_logo_icon_145276.png"
+    },
+    {
+      name: "Django",
+      level: 2,
+      logo: "https://static.djangoproject.com/img/logos/django-logo-positive.png"
+    },
+    {
+      name: "Spring MVC",
+      level: 1,
+      logo: "https://spring.io/images/spring-logo-9146a4d3298760c2e7e49595184e1975.svg"
+    },
+    {
+      name: "Redis",
+      level: 3,
+      logo: "https://cdn.worldvectorlogo.com/logos/redis.svg"
+    },
+    {
+      name: "Docker",
+      level: 3,
+      logo: "https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png.webp"
+    },
+    {
+      name: "NGINX",
+      level: 3,
+      logo: "https://www.freelogovectors.net/wp-content/uploads/2022/03/nginx_logo_freelogovectors.net_-768x872.png"
+    }
+  ]
+
+  const FBF_SKILLS: Array<Array<Technology>> = [
+    FRONTEND_SKILLS,
+    BACKEND_SKILLS,
+    MISC_SKILLS
   ];
 
   return (
@@ -129,7 +254,7 @@ function App() {
                 <div className="skillsContainer">
                   <h1 className="skillsHeader">Skills</h1>
                   {
-                    SKILLS.map((skill) => {
+                    EXPERIENCE_SKILLS.map((skill) => {
                       return (
                         <SkillsSlider skill={ skill } />
                       );
@@ -138,6 +263,26 @@ function App() {
                 </div>
               </div>
             </article>
+          </div>
+        </section>
+        <section className="skillsSection">
+          <div className="skillsInner">
+            <h1 className="header">Skills</h1>
+            <hr></hr>
+            <div className="selectorContainer">
+              <button onClick={(prop) => { updateSkillIndex( 0 ) }} className="currentSelection">Front End</button>
+              <button onClick={() => { updateSkillIndex( 1 ) }}>Back End</button>
+              <button onClick={() => { updateSkillIndex( 2 ) }}>Additional</button>
+            </div>
+            <div className="skillsContainer">
+              {
+                FBF_SKILLS[skillIndex].map((tech) => {
+                  return (
+                    <SkillCard technology={ tech } />
+                  )
+                })
+              }
+            </div>
           </div>
         </section>
       </main>

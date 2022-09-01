@@ -239,6 +239,62 @@ section.introExperienceContainer {
     }
 }
 
+section.skillsSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 100px;
+
+    .skillsInner {
+        width: 90%;
+
+        h1.header {
+            font-family: Radian Bold, sans-serif;
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            padding: 15px 0;
+            background-color: #fff;
+        }
+
+        hr {
+            width: 100%;
+            margin: 10px 0 30px;
+            opacity: 0.5;
+        }
+
+        .selectorContainer {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+
+            button {
+                display: block;
+                font-size: 1.1rem;
+                padding: 10px 40px;
+                margin-right: 5px;
+                background-color: transparent;
+                color: #000;
+                border: 1px solid #000;
+                border-radius: 30px;
+                transition: background 200ms ease-in-out, color 200ms ease-in-out;
+            }
+
+            button.currentSelection {
+                background-color: #000;
+                color: #fff;
+            }
+        }
+
+        .skillsContainer {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 75px;
+            min-height: 500px;
+        }
+    }
+}
+
 @font-face {
     font-family: Radian Light;
     src: url("../assets/fonts/Radian_Light.ttf");
