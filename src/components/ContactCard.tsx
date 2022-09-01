@@ -1,4 +1,6 @@
 import '../style/ContactCard.scss';
+import emailIcon from '../assets/email-icon.png';
+import mobilePhoneIcon from '../assets/mobile-phone-icon.png';
 
 export default function ContactCard() {
     return (
@@ -9,7 +11,7 @@ export default function ContactCard() {
             <div className="cardInner">
                 <div className="cardSection">
                     <div className="iconContainer">
-                        <img src="https://cdn.icon-icons.com/icons2/2768/PNG/512/email_icon_176616.png" />
+                        <img src={ emailIcon } />
                     </div>
                     <div className="infoSection">
                         <h1>Email</h1>
@@ -40,7 +42,7 @@ export default function ContactCard() {
                 </div>
                 <div className="cardSection">
                     <div className="iconContainer">
-                        <img src="https://westonpgreene.com/assets/mobile-phone-icon.png" />
+                        <img src={ mobilePhoneIcon } />
                     </div>
                     <div className="infoSection">
                         <h1>Phone</h1>

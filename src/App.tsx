@@ -5,6 +5,10 @@ import TechTotem from './components/TechTotem';
 import SkillsSlider from './components/SkillsSlider';
 import SkillCard from './components/SkillCard';
 
+import javaIcon from '../assets/java-icon.png';
+import flaskIcon from '../assets/flask-icon.png';
+import redisIcon from '../assets/redis-icon.png';
+
 import { Skill } from './util/Skill';
 
 import type { Technology } from './util/Technology';
@@ -110,7 +114,7 @@ function App() {
     {
       name: "Java",
       level: 4,
-      logo: "https://cdn-icons-png.flaticon.com/512/226/226777.png"
+      logo: ""
     },
     {
       name: "Python",
@@ -172,7 +176,7 @@ function App() {
     {
       name: "Flask",
       level: 3,
-      logo: "https://cdn.icon-icons.com/icons2/2389/PNG/512/flask_logo_icon_145276.png"
+      logo: ""
     },
     {
       name: "Django",
@@ -187,7 +191,7 @@ function App() {
     {
       name: "Redis",
       level: 3,
-      logo: "https://cdn.worldvectorlogo.com/logos/redis.svg"
+      logo: ""
     },
     {
       name: "Docker",

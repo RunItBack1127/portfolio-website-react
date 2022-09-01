@@ -1,4 +1,5 @@
 import '../style/PortfolioCard.scss';
+import projectIcon from '../assets/project-code-icon.webp';
 import type { Project } from '../util/Project';
 
 interface PortfolioCardProps {
@@ -9,7 +10,7 @@ export default function PortfolioCard(props: PortfolioCardProps) {
     return (
         <article className="portfolioCard">
             <header className="cardHeader">
-                <img src="https://westonpgreene.com/assets/project-code-icon.webp" />
+                <img src={ projectIcon } />
             </header>
             <div className="portfolioCardInner">
                 <div className="projectNameContainer">
