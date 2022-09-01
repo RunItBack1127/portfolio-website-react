@@ -431,6 +431,10 @@ section.contactSection {
                         color: #fff;
                     }
 
+                    button.sendButton:hover {
+                        opacity: 0.8;
+                    }
+
                     button:not(:last-child) {
                         margin-right: 30px;
                     }

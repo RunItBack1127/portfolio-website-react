@@ -88,6 +88,7 @@
                 border-radius: 25px;
                 padding: 25px 0;
                 background-color: #222;
+                transition: opacity 100ms ease-in;
 
                 .linkInner {
                     width: 100%;
@@ -107,6 +108,10 @@
                         color: #fff;
                     }
                 }
+            }
+
+            a:hover {
+                opacity: 0.75;
             }
         }
     }
