@@ -13,22 +13,38 @@ header.siteHeader {
 
     div {
         width: 80%;
+        height: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
 
         ul {
             width: 150px;
+            height: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
 
             li {
                 a, span {
+                    transition: opacity 200ms ease-in;
+
                     svg {
                         width: 25px;
                         height: 25px;
                     }
+                }
+
+                span {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        ul:hover {
+            li {
+                a:not(:hover), span:not(:hover) {
+                    opacity: 0.25;
                 }
             }
         }
