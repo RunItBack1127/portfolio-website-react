@@ -5,9 +5,9 @@ import TechTotem from './components/TechTotem';
 import SkillsSlider from './components/SkillsSlider';
 import SkillCard from './components/SkillCard';
 
-import javaIcon from '../assets/java-icon.png';
-import flaskIcon from '../assets/flask-icon.png';
-import redisIcon from '../assets/redis-icon.png';
+import javaIcon from './assets/java-icon.png';
+import flaskIcon from './assets/flask-icon.png';
+import redisIcon from './assets/redis-icon.svg';
 
 import { Skill } from './util/Skill';
 
@@ -114,7 +114,7 @@ function App() {
     {
       name: "Java",
       level: 4,
-      logo: ""
+      logo: javaIcon
     },
     {
       name: "Python",
@@ -176,7 +176,7 @@ function App() {
     {
       name: "Flask",
       level: 3,
-      logo: ""
+      logo: flaskIcon
     },
     {
       name: "Django",
@@ -191,7 +191,7 @@ function App() {
     {
       name: "Redis",
       level: 3,
-      logo: ""
+      logo: redisIcon
     },
     {
       name: "Docker",
@@ -281,39 +281,7 @@ function App() {
   ];
 
   return (
-    <div onClick={ (e) => {
-      const formFields = [ ...document.querySelectorAll( "section.fieldContainer input" ),
-                            ...document.querySelectorAll( "section.fieldContainer textarea" ) ];
-      const clickedElementIsFormField = formFields.some((field) => field === e.target);
-
-      if( clickedElementIsFormField ) {
-        if( !e.target.classList.contains( "selected" ) ) {
-          e.target.classList.add( "selected" );
-        }
-
-        const fieldsWithoutSelected = formFields.filter((field) => field !== e.target);
-        fieldsWithoutSelected.map((field) => {
-          if( field.value === "" ) {
-            field.classList.remove( "selected" );
-            field.classList.add( "emptyField" );
-          }
-          else {
-            field.classList.remove( "emptyField" );
-          }
-        });
-      }
-      else {
-        formFields.map((field) => {
-          if( field.value === "" ) {
-            field.classList.remove( "selected" );
-            field.classList.add( "emptyField" );
-          }
-          else {
-            field.classList.remove( "emptyField" );
-          }
-        });
-      }
-     } } className="App">
+    <div className="App">
       <SiteNavigation />
       <main>
         <div className="keyboardContainer">
@@ -428,7 +396,6 @@ function App() {
                   const focusedElement = document.activeElement;
 
                   if( focusedElement?.value === "" ) {
-                    focusedElement?.classList.remove( "selected" );
                     focusedElement?.classList.add( "emptyField" );
                   }
                   else {
@@ -444,6 +411,7 @@ function App() {
                                             ...document.querySelectorAll( "section.fieldContainer textarea" ) ];
                       if( e.target.value === "" ) {
                         document.querySelector( "form.contactForm" )?.classList.add( "preventSend" );
+                        e.target.classList.add( "emptyField" );
                       }
                       else {
                         const contactForm = document.querySelector( "form.contactForm" );
@@ -451,6 +419,7 @@ function App() {
                         if( !formFields.some((field) => field.value === "") ) {
                           contactForm?.classList.remove( "preventSend" );
                         }
+                        e.target.classList.remove( "emptyField" );
                       }
                     } } className="emptyField" type="text" name="nameField" />
                   </section>
@@ -461,6 +430,7 @@ function App() {
                                             ...document.querySelectorAll( "section.fieldContainer textarea" ) ];
                       if( e.target.value === "" ) {
                         document.querySelector( "form.contactForm" )?.classList.add( "preventSend" );
+                        e.target.classList.add( "emptyField" );
                       }
                       else {
                         const contactForm = document.querySelector( "form.contactForm" );
@@ -468,6 +438,7 @@ function App() {
                         if( !formFields.some((field) => field.value === "") ) {
                           contactForm?.classList.remove( "preventSend" );
                         }
+                        e.target.classList.remove( "emptyField" );
                       }
                     } } className="emptyField" type="text" name="emailField" />
                   </section>
@@ -479,6 +450,7 @@ function App() {
                                             ...document.querySelectorAll( "section.fieldContainer textarea" ) ];
                       if( e.target.value === "" ) {
                         document.querySelector( "form.contactForm" )?.classList.add( "preventSend" );
+                        e.target.classList.add( "emptyField" );
                       }
                       else {
                         const contactForm = document.querySelector( "form.contactForm" );
@@ -486,6 +458,7 @@ function App() {
                         if( !formFields.some((field) => field.value === "") ) {
                           contactForm?.classList.remove( "preventSend" );
                         }
+                        e.target.classList.remove( "emptyField" );
                       }
                     } } className="emptyField" type="text" name="subjectField" />
                 </section>
@@ -496,6 +469,7 @@ function App() {
                                             ...document.querySelectorAll( "section.fieldContainer textarea" ) ];
                       if( e.target.value === "" ) {
                         document.querySelector( "form.contactForm" )?.classList.add( "preventSend" );
+                        e.target.classList.add( "emptyField" );
                       }
                       else {
                         const contactForm = document.querySelector( "form.contactForm" );
@@ -503,6 +477,7 @@ function App() {
                         if( !formFields.some((field) => field.value === "") ) {
                           contactForm?.classList.remove( "preventSend" );
                         }
+                        e.target.classList.remove( "emptyField" );
                       }
                     } } className="emptyField" name="messageField" />
                 </section>
@@ -513,6 +488,7 @@ function App() {
                                           ...document.querySelectorAll( "section.fieldContainer textarea" ) ];
                     formFields.map((field) => {
                       field.value = "";
+                      field.classList.add( "emptyField" );
                     })
                     const contactForm = document.querySelector( "form.contactForm" );
                     contactForm?.classList.add( "preventClear" );

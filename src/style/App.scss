@@ -334,10 +334,8 @@ section.contactSection {
                     opacity: 0.1;
                 }
 
-                input.selected,
                 input:focus,
                 input:not(.emptyField),
-                textarea.selected,
                 textarea:focus,
                 textarea:not(.emptyField) {
                     opacity: 1.0;
@@ -419,7 +417,7 @@ section.contactSection {
             form.contactForm.preventSend button.sendButton,
             form.contactForm.preventClear button.clearButton {
                 pointer-events: none;
-                opacity: 0.35;
+                opacity: 0.1;
             }
         }
     }
