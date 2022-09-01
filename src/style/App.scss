@@ -233,7 +233,7 @@ section.introExperienceContainer {
                 .experienceCardContainer {
                     display: grid;
                     grid-template-columns: 1fr 1fr;
-                    gap: 50px 0;
+                    gap: 50px;
                     margin-bottom: 60px;
                 
                     .cardInner {
@@ -689,11 +689,14 @@ section.contactSection {
         grid-template-columns: 1fr;
 
         article.introExperienceCard {
-
             min-width: 0px;
         
             .cardContent {
                 width: 80%;
+
+                .talleyInfoContainer {
+                    margin-bottom: 50px;
+                }
 
                 .taglineContainer p.tagline:last-child {
                     padding-bottom: 30px;

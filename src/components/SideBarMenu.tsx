@@ -1,9 +1,15 @@
 import '../style/SideBarMenu.scss';
+import { SCROLL_TO_SECTION } from '../util/AppData';
 
 function hideSideBar() {
     document.querySelectorAll(".sideBarComponent")?.forEach((component) => {
         component.classList.remove("showSideBar");
     });
+}
+
+function scrollToSection(section: string) {
+    hideSideBar();
+    SCROLL_TO_SECTION(section);
 }
 
 export default function SideBarMenu() {
@@ -22,10 +28,10 @@ export default function SideBarMenu() {
             </header>
             <div className="sideBarContents">
                 <nav>
-                    <button>Home</button>
-                    <button>Skills</button>
-                    <button>Portfolio</button>
-                    <button>Contact</button>
+                    <button onClick={() => { scrollToSection('Home') }}>Home</button>
+                    <button onClick={() => { scrollToSection('Skills') }}>Skills</button>
+                    <button onClick={() => { scrollToSection('Portfolio') }}>Portfolio</button>
+                    <button onClick={() => { scrollToSection('Contact') }}>Contact</button>
                 </nav>
                 <div>
                     <a target="_blank" rel="noopener noreferrer" href="" className="sideBarOption">Resumé</a>

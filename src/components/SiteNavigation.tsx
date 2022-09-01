@@ -1,4 +1,5 @@
 import '../style/SiteNavigation.scss';
+import { SCROLL_TO_SECTION } from '../util/AppData';
 
 function showSideBar() {
     document.querySelectorAll(".sideBarComponent").forEach((component) => {
@@ -34,11 +35,11 @@ export default function SiteNavigation() {
                     </li>
                 </ul>
                 <nav>
-                    <button>Home</button>
-                    <button>Skills</button>
-                    <button>Portfolio</button>
-                    <button>Resumé</button>
-                    <button className="contact">Contact</button>
+                    <button onClick={() => SCROLL_TO_SECTION('Home')}>Home</button>
+                    <button onClick={() => SCROLL_TO_SECTION('Skills')}>Skills</button>
+                    <button onClick={() => SCROLL_TO_SECTION('Portfolio')}>Portfolio</button>
+                    <a target="_blank" rel="noopener noreferrer" href="">Resumé</a>
+                    <button onClick={() => SCROLL_TO_SECTION('Contact')} className="contact">Contact</button>
                 </nav>
                 <button className="responsiveMenuToggle" onClick={ showSideBar }>
                     <svg viewBox="0 0 100 63">
