@@ -91,6 +91,10 @@ function App() {
     {
       description: "Unit Testing",
       proficiency: 50
+    },
+    {
+      description: "UI/UX Design",
+      proficiency: 50
     }
   ];
 
