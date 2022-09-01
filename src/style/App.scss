@@ -4,12 +4,14 @@
     box-sizing: border-box;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 main {
-    position: fixed;
-    top: 0;
-    left: 0;
     margin-top: var(--site-navigation-header-height);
     width: 100vw;
+    height: 100vh;
 }
 
 .keyboardContainer {
@@ -20,17 +22,18 @@ main {
     top: 0;
     left: 0;
     width: 100vw;
-    height: calc(100vh - var(--site-navigation-header-height));
+    min-height: 600px;
     z-index: -100;
+    margin-top: var(--site-navigation-header-height);
 }
 
-.siteIntro {
+section.siteIntro {
 
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: calc(100vh - var(--site-navigation-header-height));
+    margin-top: 150px;
     
     .introContent {
         display: flex;
@@ -93,6 +96,116 @@ main {
             button.contact {
                 background-color: #000;
                 color: #fff;
+            }
+        }
+    }
+}
+
+section.introExperienceContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 660px;
+    margin-top: 200px;
+
+    .introExperienceInner {
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 100px 50px;
+        width: 90%;
+        min-height: 660px;
+
+        article {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            flex-basis: 47.5%;
+            min-width: 580px;
+            height: 100%;
+            border-radius: 50px;
+            border: 1px solid #000;
+
+            h1.header {
+                font-family: Radian Bold, sans-serif;
+                font-size: 3rem;
+                text-transform: uppercase;
+                transform: translateY(-50%);
+                background-color: #fff;
+                padding: 0 50px;
+            }
+
+            .cardContent {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+            }
+        }
+
+        article.aboutMeCard {
+
+            .cardContent {
+
+                width: 90%;
+
+                h1.innerHeader {
+                    font-family: Radian Bold, sans-serif;
+                    font-size: 2rem;
+                    text-transform: uppercase;
+                    margin-bottom: 30px;
+                }
+
+                .talleyInfoContainer {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 0px 30px;
+                    margin-bottom: 65px;
+
+                    img {
+                        width: 275px;
+                    }
+
+                    .talleyInfo {
+
+                        h1 {
+                            font-family: Radian Bold, sans-serif;
+                            font-size: 2rem;
+                            margin-bottom: 7.5px;
+                        }
+
+                        p {
+                            font-size: 1rem;
+                            margin-bottom: 1.5px;
+                        }
+
+                        p.major {
+                            font-size: 1.25rem;
+                            margin-bottom: 2.5px;
+                        }
+                    }
+                }
+
+                h1.taglineHeader {
+                    font-family: Radian Bold, sans-serif;
+                    font-size: 2rem;
+                    text-transform: uppercase;
+                    margin-bottom: 20px;
+                }
+
+                .taglineContainer {
+                    
+                    p.tagline {
+                        font-size: 1.05rem;
+                    }
+
+                    p.tagline:first-child {
+                        margin-bottom: 10px;
+                    }
+                }
             }
         }
     }
