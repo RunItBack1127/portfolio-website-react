@@ -22,9 +22,15 @@ import {
 import React from 'react';
 import talleyWireframe from './assets/talley-wireframe.png';
 
-class App extends React.Component {
+interface IProps {};
+interface IState {
+  skillIndex: number,
+  isValidEmail: boolean
+}
 
-  constructor(props) {
+class App extends React.Component<IProps, IState> {
+
+  constructor(props: IProps) {
     super(props);
     this.state = {
       skillIndex: 0,
@@ -164,6 +170,7 @@ class App extends React.Component {
                   if( e.key.toUpperCase() === "TAB" ) {
                     const focusedElement = document.activeElement;
 
+                    // @ts-ignore
                     if( focusedElement?.value === "" ) {
                       focusedElement?.classList.add( "emptyField" );
                     }
@@ -180,19 +187,27 @@ class App extends React.Component {
                                               ...document.querySelectorAll( "section.fieldContainer textarea" ) ];
                         const contactForm = document.querySelector( "form.contactForm" );
 
+                        // @ts-ignore
                         if( e.target.value === "" ) {
                           contactForm?.classList.add( "preventSend" );
+                          
+                          // @ts-ignore
                           e.target.classList.add( "emptyField" );
 
+                          // @ts-ignore
                           if( !formFields.some((field) => field.value !== "") ) {
                             contactForm?.classList.add( "preventClear" );
                           }
                         }
                         else {
                           contactForm?.classList.remove( "preventClear" );
+
+                          // @ts-ignore
                           if( !formFields.some((field) => field.value === "") && this.state.isValidEmail ) {
                             contactForm?.classList.remove( "preventSend" );
                           }
+
+                          // @ts-ignore
                           e.target.classList.remove( "emptyField" );
                         }
                       } } className="emptyField" type="text" name="nameField" />
@@ -213,18 +228,28 @@ class App extends React.Component {
                         const contactForm = document.querySelector( "form.contactForm" );
                         const emailContainer = document.querySelector( "form.contactForm .nameEmailContainer" );
 
+                        // @ts-ignore
                         if( e.target.value === "" ) {
                           contactForm?.classList.add( "preventSend" );
+
+                          // @ts-ignore
                           e.target.classList.remove("invalidEmail");
+
+                          // @ts-ignore
                           e.target.classList.add( "emptyField" );
 
+                          // @ts-ignore
                           if( !formFields.some((field) => field.value !== "") ) {
                             contactForm?.classList.add( "preventClear" );
                           }
                         }
                         else {
                           contactForm?.classList.remove( "preventClear" );
+                          
+                          // @ts-ignore
                           if( isValidEmail( e.target.value ) ) {
+
+                            // @ts-ignore
                             if( !formFields.some((field) => field.value === "") ) {
                               contactForm?.classList.remove( "preventSend" );
                             }
@@ -235,6 +260,8 @@ class App extends React.Component {
                             emailContainer?.classList.add( "invalidEmail" );
                             this.setState({ isValidEmail: false });
                           }
+
+                          // @ts-ignore
                           e.target.classList.remove( "emptyField" );
                         }
                       } } className="emptyField" type="text" name="emailField" />
@@ -247,19 +274,27 @@ class App extends React.Component {
                                               ...document.querySelectorAll( "section.fieldContainer textarea" ) ];
                         const contactForm = document.querySelector( "form.contactForm" );
                         
+                        // @ts-ignore
                         if( e.target.value === "" ) {
                           contactForm?.classList.add( "preventSend" );
+                          
+                          // @ts-ignore
                           e.target.classList.add( "emptyField" );
 
+                          // @ts-ignore
                           if( !formFields.some((field) => field.value !== "") ) {
                             contactForm?.classList.add( "preventClear" );
                           }
                         }
                         else {
                           contactForm?.classList.remove( "preventClear" );
+
+                          // @ts-ignore
                           if( !formFields.some((field) => field.value === "") && this.state.isValidEmail ) {
                             contactForm?.classList.remove( "preventSend" );
                           }
+
+                          // @ts-ignore
                           e.target.classList.remove( "emptyField" );
                         }
                       } } className="emptyField" type="text" name="subjectField" />
@@ -271,19 +306,27 @@ class App extends React.Component {
                                               ...document.querySelectorAll( "section.fieldContainer textarea" ) ];
                         const contactForm = document.querySelector( "form.contactForm" );
 
+                        // @ts-ignore
                         if( e.target.value === "" ) {
                           contactForm?.classList.add( "preventSend" );
+
+                          // @ts-ignore
                           e.target.classList.add( "emptyField" );
 
+                          // @ts-ignore
                           if( !formFields.some((field) => field.value !== "") ) {
                             contactForm?.classList.add( "preventClear" );
                           }
                         }
                         else {
                           contactForm?.classList.remove( "preventClear" );
+
+                          // @ts-ignore
                           if( !formFields.some((field) => field.value === "") && this.state.isValidEmail ) {
                             contactForm?.classList.remove( "preventSend" );
                           }
+
+                          // @ts-ignore
                           e.target.classList.remove( "emptyField" );
                         }
                       } } className="emptyField" name="messageField" />
@@ -294,7 +337,10 @@ class App extends React.Component {
                       const formFields = [ ...document.querySelectorAll( "section.fieldContainer input" ),
                                             ...document.querySelectorAll( "section.fieldContainer textarea" ) ];
                       formFields.map((field) => {
+
+                        // @ts-ignore
                         field.value = "";
+
                         field.classList.add( "emptyField" );
                       });
 

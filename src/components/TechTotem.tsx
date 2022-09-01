@@ -29,19 +29,19 @@ function ExperienceContainer(props: ExperienceContainerProps) {
             <h1 className="techName">{ props.technology.name }</h1>
             <div className="gaugeContainer">
                 <div className="gaugeInner">
-                    <svg className={ props.technology.level >= 1 ? "skillMet" : "" } viewBox="0 0 25 25">
+                    <svg className={ props.technology.level != undefined && props.technology.level >= 1 ? "skillMet" : "" } viewBox="0 0 25 25">
                         <circle cx="12.5" cy="12.5" r="10"></circle>
                     </svg>
-                    <svg className={ props.technology.level >= 2 ? "skillMet" : "" } viewBox="0 0 25 25">
+                    <svg className={  props.technology.level != undefined && props.technology.level >= 2 ? "skillMet" : "" } viewBox="0 0 25 25">
                         <circle cx="12.5" cy="12.5" r="10"></circle>
                     </svg>
-                    <svg className={ props.technology.level >= 3 ? "skillMet" : "" } viewBox="0 0 25 25">
+                    <svg className={  props.technology.level != undefined && props.technology.level >= 3 ? "skillMet" : "" } viewBox="0 0 25 25">
                         <circle cx="12.5" cy="12.5" r="10"></circle>
                     </svg>
-                    <svg className={ props.technology.level >= 4 ? "skillMet" : "" } viewBox="0 0 25 25">
+                    <svg className={  props.technology.level != undefined && props.technology.level >= 4 ? "skillMet" : "" } viewBox="0 0 25 25">
                         <circle cx="12.5" cy="12.5" r="10"></circle>
                     </svg>
-                    <svg className={ props.technology.level >= 5 ? "skillMet" : "" } viewBox="0 0 25 25">
+                    <svg className={  props.technology.level != undefined && props.technology.level >= 5 ? "skillMet" : "" } viewBox="0 0 25 25">
                         <circle cx="12.5" cy="12.5" r="10"></circle>
                     </svg>
                 </div>
