@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-top: 100px;
+    width: 100vw;
+}
+
+.keyboardContainer {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 100px);
+    z-index: -100;
+}
+
+.siteIntro {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 100px);
+    
+    .introContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 100%;
+        max-width: 750px;
+        font-size: 2.5rem;
+
+        .nameContainer {
+
+            width: 100%;
+            margin-bottom: 25px;
+
+            p {
+                font-family: Radian Light, sans-serif;
+                font-size: 1em;
+                text-align: right;
+                text-transform: uppercase;
+            }
+
+            h1 {
+                font-family: Radian Bold, sans-serif;
+                font-size: 3.4em;
+                text-transform: uppercase;
+            }
+
+            h1[name-align="right"] {
+                text-align: right;
+                margin-top: -0.25em;
+            }
+        }
+
+        p.introMessage {
+            font-family: Radian Extra Light, sans-serif;
+            font-size: 0.8em;
+            line-height: 1.15em;
+            text-align: center;
+        }
+
+        div.workContactContainer {
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: 45px;
+
+            button {
+                font-size: 0.75em;
+                width: 47.5%;
+                border: 1px solid #000;
+                border-radius: 50px;
+                padding: 20px 0;
+                text-transform: uppercase;
+            }
+
+            button.contact {
+                background-color: #000;
+                color: #fff;
+            }
+        }
+    }
+}
+
+@font-face {
+    font-family: Radian Light;
+    src: url("../assets/fonts/Radian_Light.ttf");
+}
+
+@font-face {
+    font-family: Radian Bold;
+    src: url("../assets/fonts/Radian_Bold.ttf");
+}
+
+@font-face {
+    font-family: Radian Extra Light;
+    src: url("../assets/fonts/Radian_ExtraLight.ttf");
+}
