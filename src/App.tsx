@@ -10,6 +10,8 @@ import { Skill } from './util/Skill';
 import type { Technology } from './util/Technology';
 
 import { useState } from 'react';
+import { Project } from './util/Project';
+import PortfolioCard from './components/PortfolioCard';
 
 function App() {
 
@@ -193,6 +195,72 @@ function App() {
     }
   ]
 
+  const PORTFOLIO_PROJECTS: Array<Project> = [
+    {
+      name: "EcoPRT Website Redesign",
+      description: "Leveraged a variety of technologies and cloud-based services for improving and upgrading the previous web domain for the lab to a modern and polished fully-featured web application.",
+      technologiesUsed: [
+        {
+          name: "Vue.js",
+          level: undefined,
+          logo: "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg"
+        },
+        {
+          name: "Typescript",
+          level: undefined,
+          logo: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg"
+        },
+        {
+          name: "Docker",
+          level: undefined,
+          logo: "https://iconape.com/wp-content/files/fr/370801/svg/docker-icon-logo-icon-png-svg.png"
+        }
+      ]
+    },
+    {
+      name: "AutoCV Cover Letter Generator",
+      description: "Automation engine for generating cover letters with metadata specified from the end user, utilizing Chromium for rendering the cover letter PDF through the Puppeteer library.",
+      technologiesUsed: [
+        {
+          name: "Python",
+          level: undefined,
+          logo: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
+        },
+        {
+          name: "Flask",
+          level: undefined,
+          logo: "https://cdn.icon-icons.com/icons2/2389/PNG/512/flask_logo_icon_145276.png"
+        },
+        {
+          name: "React",
+          level: undefined,
+          logo: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+        }
+      ]
+    },
+    {
+      name: "Sidekick Basketball API",
+      description: "REST API endpoint for retrieving the current season games, win/loss record, opponents, location, and other stats for both the NC State Men's and Women's Basketball teams.",
+      technologiesUsed: [
+        {
+          name: "Node.js",
+          level: undefined,
+          logo: "https://seeklogo.com/images/N/nodejs-logo-FBE122E377-seeklogo.com.png",
+        },
+        {
+          name: "Typescript",
+          level: undefined,
+          logo: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg"
+        },
+        {
+          name: "PostgreSQL",
+          level: undefined,
+          logo: "https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg"
+        }
+      ]
+    }
+  ]
+
   const FBF_SKILLS: Array<Array<Technology>> = [
     FRONTEND_SKILLS,
     BACKEND_SKILLS,
@@ -269,8 +337,8 @@ function App() {
             </article>
           </div>
         </section>
-        <section className="skillsSection">
-          <div className="skillsInner">
+        <section className="skillsSection outlinedSection">
+          <div className="skillsInner outlinedSectionInner">
             <h1 className="header">Skills</h1>
             <hr></hr>
             <div className="selectorContainer">
@@ -283,6 +351,21 @@ function App() {
                 FBF_SKILLS[skillIndex].map((tech) => {
                   return (
                     <SkillCard technology={ tech } />
+                  )
+                })
+              }
+            </div>
+          </div>
+        </section>
+        <section className="portfolioSection outlinedSection">
+          <div className="portfolioSectionInner outlinedSectionInner">
+            <h1 className="header">Portfolio</h1>
+            <hr></hr>
+            <div className="portfolioContainer">
+              {
+                PORTFOLIO_PROJECTS.map((project) => {
+                  return (
+                    <PortfolioCard project={ project } />
                   )
                 })
               }

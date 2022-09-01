@@ -239,14 +239,14 @@ section.introExperienceContainer {
     }
 }
 
-section.skillsSection {
+section.outlinedSection {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     margin-top: 100px;
 
-    .skillsInner {
+    .outlinedSectionInner {
         width: 90%;
 
         h1.header {
@@ -262,6 +262,12 @@ section.skillsSection {
             margin: 10px 0 30px;
             opacity: 0.5;
         }
+    }
+}
+
+section.skillsSection {
+
+    .skillsInner {
 
         .selectorContainer {
             display: flex;
@@ -291,6 +297,21 @@ section.skillsSection {
             grid-template-columns: 1fr 1fr 1fr;
             gap: 75px;
             min-height: 500px;
+        }
+    }
+}
+
+section.portfolioSection {
+
+    margin-top: 125px;
+
+    .portfolioSectionInner {
+
+        .portfolioContainer {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 50px;
+            margin-top: 75px;
         }
     }
 }

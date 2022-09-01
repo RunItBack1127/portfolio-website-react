@@ -2,7 +2,7 @@ import '../style/SiteNavigation.scss';
 
 export default function SiteNavigation() {
     return (
-        <header>
+        <header className="siteHeader">
             <div>
                 <ul>
                     <li>

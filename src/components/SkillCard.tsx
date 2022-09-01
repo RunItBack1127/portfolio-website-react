@@ -14,11 +14,11 @@ export default function SkillCard(props: SkillCardProps) {
             <div className="techContainer">
                 <h1>{ props.technology.name }</h1>
                 <div className="levelContainer">
-                    <span className={ props.technology.level >= 1 ? "skillMet" : "" }></span>
-                    <span className={ props.technology.level >= 2 ? "skillMet" : "" }></span>
-                    <span className={ props.technology.level >= 3 ? "skillMet" : "" }></span>
-                    <span className={ props.technology.level >= 4 ? "skillMet" : "" }></span>
-                    <span className={ props.technology.level >= 5 ? "skillMet" : "" }></span>
+                    <span className={ props.technology.level != undefined && props.technology.level >= 1 ? "skillMet" : "" }></span>
+                    <span className={ props.technology.level != undefined && props.technology.level >= 2 ? "skillMet" : "" }></span>
+                    <span className={ props.technology.level != undefined && props.technology.level >= 3 ? "skillMet" : "" }></span>
+                    <span className={ props.technology.level != undefined && props.technology.level >= 4 ? "skillMet" : "" }></span>
+                    <span className={ props.technology.level != undefined && props.technology.level >= 5 ? "skillMet" : "" }></span>
                 </div>
             </div>
         </div>
