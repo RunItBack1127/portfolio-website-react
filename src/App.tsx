@@ -12,6 +12,7 @@ import type { Technology } from './util/Technology';
 import { useState } from 'react';
 import { Project } from './util/Project';
 import PortfolioCard from './components/PortfolioCard';
+import ContactCard from './components/ContactCard';
 
 function App() {
 
@@ -380,7 +381,31 @@ function App() {
             <h1 className="header">Contact</h1>
             <hr></hr>
             <div className="contactContainer">
-              
+              <ContactCard />
+              <form className="contactForm emptyForm">
+                <div className="nameEmailContainer">
+                  <section className="fieldContainer">
+                    <label htmlFor="nameField">Name</label>
+                    <input type="text" name="nameField" />
+                  </section>
+                  <section className="fieldContainer">
+                    <label htmlFor="emailField">Email</label>
+                    <input type="text" name="emailField" />
+                  </section>
+                </div>
+                <section className="subjectContainer fieldContainer">
+                  <label htmlFor="subjectField">Subject</label>
+                  <input type="text" name="subjectField" />
+                </section>
+                <section className="messageContainer fieldContainer">
+                  <label htmlFor="messageField">Message</label>
+                  <textarea name="messageField" />
+                </section>
+                <div className="clearSubmitContainer">
+                  <button className="clearButton">Clear</button>
+                  <button className="sendButton">Send</button>
+                </div>
+              </form>
             </div>
           </div>
         </section>
