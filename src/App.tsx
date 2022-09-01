@@ -28,6 +28,10 @@ function App() {
     nextSelectedSkill?.classList.add( "currentSelection" );
   }
 
+  function updateFields( e ) {
+    console.log( e.target.value );
+  }
+
   const WEB_DEV_STACK_TECHNOLOGIES: Array<Technology> = [
     {
       name: "Vue.js",
@@ -272,7 +276,39 @@ function App() {
   ];
 
   return (
-    <div className="App">
+    <div onClick={ (e) => {
+      const formFields = [ ...document.querySelectorAll( "section.fieldContainer input" ),
+                            ...document.querySelectorAll( "section.fieldContainer textarea" ) ];
+      const clickedElementIsFormField = formFields.some((field) => field === e.target);
+
+      if( clickedElementIsFormField ) {
+        if( !e.target.classList.contains( "selected" ) ) {
+          e.target.classList.add( "selected" );
+        }
+
+        const fieldsWithoutSelected = formFields.filter((field) => field !== e.target);
+        fieldsWithoutSelected.map((field) => {
+          if( field.value === "" ) {
+            field.classList.remove( "selected" );
+            field.classList.add( "emptyField" );
+          }
+          else {
+            field.classList.remove( "emptyField" );
+          }
+        });
+      }
+      else {
+        formFields.map((field) => {
+          if( field.value === "" ) {
+            field.classList.remove( "selected" );
+            field.classList.add( "emptyField" );
+          }
+          else {
+            field.classList.remove( "emptyField" );
+          }
+        });
+      }
+     } } className="App">
       <SiteNavigation />
       <main>
         <div className="keyboardContainer">
@@ -382,27 +418,102 @@ function App() {
             <hr></hr>
             <div className="contactContainer">
               <ContactCard />
-              <form className="contactForm emptyForm">
+              <form onKeyDown={ (e) => {
+                if( e.key.toUpperCase() === "TAB" ) {
+                  const focusedElement = document.activeElement;
+
+                  if( focusedElement?.value === "" ) {
+                    focusedElement?.classList.remove( "selected" );
+                    focusedElement?.classList.add( "emptyField" );
+                  }
+                  else {
+                    focusedElement?.classList.remove( "emptyField" );
+                  }
+                }
+              } } className="contactForm preventSend preventClear">
                 <div className="nameEmailContainer">
                   <section className="fieldContainer">
                     <label htmlFor="nameField">Name</label>
-                    <input type="text" name="nameField" />
+                    <input onInput={ (e) => {
+                      const formFields = [ ...document.querySelectorAll( "section.fieldContainer input" ),
+                                            ...document.querySelectorAll( "section.fieldContainer textarea" ) ];
+                      if( e.target.value === "" ) {
+                        document.querySelector( "form.contactForm" )?.classList.add( "preventSend" );
+                      }
+                      else {
+                        const contactForm = document.querySelector( "form.contactForm" );
+                        contactForm?.classList.remove( "preventClear" );
+                        if( !formFields.some((field) => field.value === "") ) {
+                          contactForm?.classList.remove( "preventSend" );
+                        }
+                      }
+                    } } className="emptyField" type="text" name="nameField" />
                   </section>
                   <section className="fieldContainer">
                     <label htmlFor="emailField">Email</label>
-                    <input type="text" name="emailField" />
+                    <input onInput={ (e) => {
+                      const formFields = [ ...document.querySelectorAll( "section.fieldContainer input" ),
+                                            ...document.querySelectorAll( "section.fieldContainer textarea" ) ];
+                      if( e.target.value === "" ) {
+                        document.querySelector( "form.contactForm" )?.classList.add( "preventSend" );
+                      }
+                      else {
+                        const contactForm = document.querySelector( "form.contactForm" );
+                        contactForm?.classList.remove( "preventClear" );
+                        if( !formFields.some((field) => field.value === "") ) {
+                          contactForm?.classList.remove( "preventSend" );
+                        }
+                      }
+                    } } className="emptyField" type="text" name="emailField" />
                   </section>
                 </div>
                 <section className="subjectContainer fieldContainer">
                   <label htmlFor="subjectField">Subject</label>
-                  <input type="text" name="subjectField" />
+                  <input onInput={ (e) => {
+                      const formFields = [ ...document.querySelectorAll( "section.fieldContainer input" ),
+                                            ...document.querySelectorAll( "section.fieldContainer textarea" ) ];
+                      if( e.target.value === "" ) {
+                        document.querySelector( "form.contactForm" )?.classList.add( "preventSend" );
+                      }
+                      else {
+                        const contactForm = document.querySelector( "form.contactForm" );
+                        contactForm?.classList.remove( "preventClear" );
+                        if( !formFields.some((field) => field.value === "") ) {
+                          contactForm?.classList.remove( "preventSend" );
+                        }
+                      }
+                    } } className="emptyField" type="text" name="subjectField" />
                 </section>
                 <section className="messageContainer fieldContainer">
                   <label htmlFor="messageField">Message</label>
-                  <textarea name="messageField" />
+                  <textarea onInput={ (e) => {
+                      const formFields = [ ...document.querySelectorAll( "section.fieldContainer input" ),
+                                            ...document.querySelectorAll( "section.fieldContainer textarea" ) ];
+                      if( e.target.value === "" ) {
+                        document.querySelector( "form.contactForm" )?.classList.add( "preventSend" );
+                      }
+                      else {
+                        const contactForm = document.querySelector( "form.contactForm" );
+                        contactForm?.classList.remove( "preventClear" );
+                        if( !formFields.some((field) => field.value === "") ) {
+                          contactForm?.classList.remove( "preventSend" );
+                        }
+                      }
+                    } } className="emptyField" name="messageField" />
                 </section>
                 <div className="clearSubmitContainer">
-                  <button className="clearButton">Clear</button>
+                  <button onClick={ (e) => {
+                    e.preventDefault();
+                    const formFields = [ ...document.querySelectorAll( "section.fieldContainer input" ),
+                                          ...document.querySelectorAll( "section.fieldContainer textarea" ) ];
+                    formFields.map((field) => {
+                      field.value = "";
+                    })
+                    const contactForm = document.querySelector( "form.contactForm" );
+                    contactForm?.classList.add( "preventClear" );
+                    contactForm?.classList.add( "preventSend" );
+
+                  } } className="clearButton">Clear</button>
                   <button className="sendButton">Send</button>
                 </div>
               </form>
