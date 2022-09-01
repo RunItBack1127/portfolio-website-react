@@ -199,6 +199,7 @@ function App() {
     {
       name: "EcoPRT Website Redesign",
       description: "Leveraged a variety of technologies and cloud-based services for improving and upgrading the previous web domain for the lab to a modern and polished fully-featured web application.",
+      githubLink: "https://github.com/RunItBack1127",
       technologiesUsed: [
         {
           name: "Vue.js",
@@ -220,6 +221,7 @@ function App() {
     {
       name: "AutoCV Cover Letter Generator",
       description: "Automation engine for generating cover letters with metadata specified from the end user, utilizing Chromium for rendering the cover letter PDF through the Puppeteer library.",
+      githubLink: "https://github.com/RunItBack1127",
       technologiesUsed: [
         {
           name: "Python",
@@ -241,6 +243,7 @@ function App() {
     {
       name: "Sidekick Basketball API",
       description: "REST API endpoint for retrieving the current season games, win/loss record, opponents, location, and other stats for both the NC State Men's and Women's Basketball teams.",
+      githubLink: "https://github.com/RunItBack1127",
       technologiesUsed: [
         {
           name: "Node.js",
@@ -369,6 +372,15 @@ function App() {
                   )
                 })
               }
+            </div>
+          </div>
+        </section>
+        <section className="contactSection outlinedSection">
+          <div className="contactInner outlinedSectionInner">
+            <h1 className="header">Contact</h1>
+            <hr></hr>
+            <div className="contactContainer">
+              
             </div>
           </div>
         </section>
