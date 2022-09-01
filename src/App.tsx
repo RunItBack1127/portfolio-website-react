@@ -514,7 +514,9 @@ function App() {
                     contactForm?.classList.add( "preventSend" );
 
                   } } className="clearButton">Clear</button>
-                  <button className="sendButton">Send</button>
+                  <button onClick={ (e) => {
+                    e.preventDefault();
+                  } } className="sendButton">Send</button>
                 </div>
               </form>
             </div>
