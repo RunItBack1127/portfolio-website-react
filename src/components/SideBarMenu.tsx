@@ -35,7 +35,7 @@ export default function SideBarMenu() {
                         <button onClick={() => { scrollToSection('Contact') }}>Contact</button>
                     </nav>
                     <div>
-                        <a target="_blank" rel="noopener noreferrer" href="" className="sideBarOption">Resumé</a>
+                        <a target="_blank" rel="noopener noreferrer" href="https://github.com/RunItBack1127/portfolio-website-react/raw/main/src/assets/Weston_P_Greene_Resume.pdf" className="sideBarOption">Resumé</a>
                         <a target="_blank" rel="noopener noreferrer" href="https://github.com/RunItBack1127/portfolio-website-react" className="sideBarOption githubOption">Source on GitHub</a>
                     </div>
                 </div>

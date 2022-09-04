@@ -38,7 +38,7 @@ export default function SiteNavigation() {
                     <button onClick={() => SCROLL_TO_SECTION('Home')}>Home</button>
                     <button onClick={() => SCROLL_TO_SECTION('Skills')}>Skills</button>
                     <button onClick={() => SCROLL_TO_SECTION('Portfolio')}>Portfolio</button>
-                    <a target="_blank" rel="noopener noreferrer" href="">Resumé</a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/RunItBack1127/portfolio-website-react/raw/main/src/assets/Weston_P_Greene_Resume.pdf">Resumé</a>
                     <button onClick={() => SCROLL_TO_SECTION('Contact')} className="contact">Contact</button>
                 </nav>
                 <button className="responsiveMenuToggle" onClick={ showSideBar }>

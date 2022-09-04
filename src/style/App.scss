@@ -8,10 +8,6 @@ body {
     overflow-x: hidden;
 }
 
-body.showSideBar {
-    overflow-y: hidden;
-}
-
 main {
     margin-top: var(--site-navigation-header-height);
     width: 100vw;
@@ -26,10 +22,6 @@ main {
         height: 100vh;
         z-index: 99999;
         background-color: rgba(50, 50, 50, 0.85);
-    }
-
-    .sideBarObfuscator.showSideBar {
-        display: block;
     }
 }
 
@@ -707,6 +699,22 @@ section.contactSection {
 
     section.portfolioSection .portfolioSectionInner .portfolioContainer {
         grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 1151px) {
+    body.showSideBar {
+        overflow-y: hidden;
+    }
+
+    main {
+        aside.sideBar {
+            display: block;
+        }
+
+        .sideBarObfuscator.showSideBar {
+            display: block;
+        }
     }
 }
 
