@@ -26,16 +26,18 @@ export default function SideBarMenu() {
                     </button>
                 </div>
             </header>
-            <div className="sideBarContents">
-                <nav>
-                    <button onClick={() => { scrollToSection('Home') }}>Home</button>
-                    <button onClick={() => { scrollToSection('Skills') }}>Skills</button>
-                    <button onClick={() => { scrollToSection('Portfolio') }}>Portfolio</button>
-                    <button onClick={() => { scrollToSection('Contact') }}>Contact</button>
-                </nav>
-                <div>
-                    <a target="_blank" rel="noopener noreferrer" href="" className="sideBarOption">Resumé</a>
-                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/RunItBack1127/portfolio-website-react" className="sideBarOption githubOption">Source on GitHub</a>
+            <div className="sideBarScrollContainer">
+                <div className="sideBarContents">
+                    <nav>
+                        <button onClick={() => { scrollToSection('Home') }}>Home</button>
+                        <button onClick={() => { scrollToSection('Skills') }}>Skills</button>
+                        <button onClick={() => { scrollToSection('Portfolio') }}>Portfolio</button>
+                        <button onClick={() => { scrollToSection('Contact') }}>Contact</button>
+                    </nav>
+                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="" className="sideBarOption">Resumé</a>
+                        <a target="_blank" rel="noopener noreferrer" href="https://github.com/RunItBack1127/portfolio-website-react" className="sideBarOption githubOption">Source on GitHub</a>
+                    </div>
                 </div>
             </div>
         </aside>

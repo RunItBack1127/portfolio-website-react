@@ -363,8 +363,8 @@ class App extends React.Component<IProps, IState> {
           </section>
           <SiteFooter />
           <div className="sideBarObfuscator sideBarComponent" />
+          <SideBarMenu />
         </main>
-        <SideBarMenu />
       </div>
     );
   }

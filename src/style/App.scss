@@ -19,7 +19,7 @@ main {
 
     .sideBarObfuscator {
         display: none;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         width: 100vw;
@@ -694,6 +694,8 @@ section.contactSection {
 
         article.contactCard {
             max-width: 500px;
+            width: 100%;
+            margin: auto;
         }
     }
 }

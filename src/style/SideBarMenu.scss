@@ -39,60 +39,63 @@ aside.sideBar {
         }
     }
 
-    div.sideBarContents {
-        width: 100%;
+    div.sideBarScrollContainer {
         height: calc(100% - var(--site-navigation-header-height));
-        min-height: 600px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         overflow-y: scroll;
 
-        nav {
+        div.sideBarContents {
             width: 100%;
-            height: 70%;
+            height: 100%;
+            min-height: 750px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
 
-            button {
+            nav {
                 width: 100%;
-                font-size: 1.5rem;
-                letter-spacing: 0.15rem;
-                text-transform: uppercase;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 150px;
+
+                button {
+                    width: 100%;
+                    font-size: 1.5rem;
+                    letter-spacing: 0.15rem;
+                    text-transform: uppercase;
+                }
+
+                button:not(:last-child) {
+                    margin-bottom: 65px;
+                }
             }
 
-            button:not(:last-child) {
-                margin-bottom: 65px;
-            }
-        }
+            div {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
 
-        div {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 30%;
+                a.sideBarOption {
+                    width: 80%;
+                    font-size: 1.5rem;
+                    padding: 20px 0;
+                    border: 1px solid #000;
+                    border-radius: 10px;
+                    text-align: center;
+                }
 
-            a.sideBarOption {
-                width: 80%;
-                font-size: 1.5rem;
-                padding: 20px 0;
-                border: 1px solid #000;
-                border-radius: 10px;
-                text-align: center;
-            }
+                a.sideBarOption.githubOption {
+                    background-color: #222;
+                    color: #fff;
+                }
 
-            a.sideBarOption.githubOption {
-                background-color: #222;
-                color: #fff;
-            }
-
-            a.sideBarOption:not(:last-child) {
-                margin-bottom: 20px;
+                a.sideBarOption:not(:last-child) {
+                    margin-bottom: 20px;
+                }
             }
         }
     }
