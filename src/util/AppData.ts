@@ -73,7 +73,7 @@ const SOFTWARE_DEV_STACK_TECHNOLOGIES: Array<Technology> = [
 },
 {
     name: "C/C++",
-    level: 3,
+    level: 2,
     logo: undefined
 },
 {
@@ -124,12 +124,12 @@ const BACKEND_SKILLS: Array<Technology> = [
 },
 {
     name: "C++",
-    level: 3,
+    level: 2,
     logo: "https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg"
 },
 {
     name: "C",
-    level: 3,
+    level: 2,
     logo: "https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png"
 },
 {
