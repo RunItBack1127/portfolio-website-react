@@ -105,10 +105,10 @@ class App extends React.Component<IProps, IState> {
                 <div className="cardContent">
                   <div className="experienceCardContainer">
                     <div className="cardInner">
-                      <TechTotem title="Web Dev Stack" technologies={ WEB_DEV_STACK_TECHNOLOGIES } />
+                      <TechTotem title={"Web Dev\nStack"} technologies={ WEB_DEV_STACK_TECHNOLOGIES } />
                     </div>
                     <div className="cardInner">
-                      <TechTotem title="Software Dev Stack" technologies={ SOFTWARE_DEV_STACK_TECHNOLOGIES } />
+                      <TechTotem title={"Software\nDev Stack"} technologies={ SOFTWARE_DEV_STACK_TECHNOLOGIES } />
                     </div>
                   </div>
                   <div className="skillsContainer">
