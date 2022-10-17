@@ -6,14 +6,6 @@ import javaIcon from '../assets/java-icon.png';
 import flaskIcon from '../assets/flask-icon.png';
 import redisIcon from '../assets/redis-icon.svg';
 
-function computeTopCoordinate(element: HTMLElement | null) {
-    if( element == null ) {
-        return 0;
-    }
-    const bcr = element.getBoundingClientRect();
-    return bcr.top;
-}
-
 const SECTION_NAMES_TO_ELEMENTS = new Map();
 
 function UPDATE_SECTION_ELEMENTS() {
@@ -215,9 +207,9 @@ const MISC_SKILLS: Array<Technology> = [
 
 const PORTFOLIO_PROJECTS: Array<Project> = [
 {
-    name: "EcoPRT Website Redesign",
-    description: "Leveraged a variety of technologies and cloud-based services for improving and upgrading the previous web domain for the lab to a modern and polished fully-featured web application.",
-    githubLink: "https://github.com/RunItBack1127",
+    name: "Proton 3D Viewer",
+    description: "Minimal web app for viewing 3D model files in the browser, supporting a variety of file formats with the ability to extend for others - inspired by the Online3DViewer project.",
+    githubLink: "https://github.com/RunItBack1127/Proton3DViewer",
     technologiesUsed: [
     {
         name: "Vue.js",
@@ -230,16 +222,16 @@ const PORTFOLIO_PROJECTS: Array<Project> = [
         logo: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg"
     },
     {
-        name: "Docker",
+        name: "Three.js",
         level: undefined,
-        logo: "https://iconape.com/wp-content/files/fr/370801/svg/docker-icon-logo-icon-png-svg.png"
+        logo: "https://global.discourse-cdn.com/standard17/uploads/threejs/optimized/2X/e/e4f86d2200d2d35c30f7b1494e96b9595ebc2751_2_992x1000.png"
     }
     ]
 },
 {
     name: "AutoCV Cover Letter Generator",
     description: "Automation engine for generating cover letters with metadata specified from the end user, utilizing Chromium for rendering the cover letter PDF through the Puppeteer library.",
-    githubLink: "https://github.com/RunItBack1127",
+    githubLink: "https://github.com/RunItBack1127/autocv-unix",
     technologiesUsed: [
     {
         name: "Python",
@@ -252,9 +244,9 @@ const PORTFOLIO_PROJECTS: Array<Project> = [
         logo: flaskIcon
     },
     {
-        name: "React",
+        name: "Vue.js",
         level: undefined,
-        logo: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
+        logo: "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg"
     }
     ]
 },
