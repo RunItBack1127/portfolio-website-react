@@ -8,8 +8,22 @@ header.siteHeader {
     justify-content: center;
     align-items: center;
     background-color: #fff;
+    transition: opacity 200ms ease;
     box-shadow: rgba(50, 50, 93, 0.15) 0px 2px 5px -1px, rgba(0, 0, 0, 0.15) 0px 1px 3px -1px;
     z-index: 999999;
+
+    &:hover {
+
+        div {
+            
+            nav button:not(:hover),
+            nav a:not(:hover),
+            ul li a:not(:hover),
+            ul li span:not(:hover) {
+                opacity: 0.25;
+            }
+        }
+    }
 
     div {
         width: 80%;
@@ -41,14 +55,6 @@ header.siteHeader {
             }
         }
 
-        ul:hover {
-            li {
-                a:not(:hover), span:not(:hover) {
-                    opacity: 0.25;
-                }
-            }
-        }
-
         nav {
             width: 700px;
             height: 100%;
@@ -68,12 +74,6 @@ header.siteHeader {
                 border-radius: 50px;
                 color: #fff;
                 padding: 12.5px 35px;
-            }
-        }
-
-        nav:hover {
-            button:not(:hover), a:not(:hover) {
-                opacity: 0.25;
             }
         }
 
